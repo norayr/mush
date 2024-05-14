@@ -12,8 +12,12 @@ BEGIN
 
   Texts.OpenScanner(S, Oberon.Par.text, Oberon.Par.pos);
   Texts.Scan(S);
+  IF ~S.eot THEN
+    arg := S.s;
+    (* ... *)
+  END
 
-  arg := S.s;
+  UNTIL S.eot;
 
 
 END init;
